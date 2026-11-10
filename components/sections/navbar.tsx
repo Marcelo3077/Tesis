@@ -10,7 +10,6 @@ const NAV_LINKS = [
   { label: 'Inicio', href: '#inicio' },
   { label: 'Cómo funciona', href: '#como-funciona' },
   { label: 'Espacios', href: '#espacios' },
-  { label: 'Publicar mi espacio', href: '#solicitar' },
   { label: 'Preguntas', href: '#faq' },
 ]
 
@@ -67,12 +66,9 @@ export function Navbar() {
         </ul>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <a
-            href="#publica"
-            className="text-sm font-semibold text-brand-blue transition-colors hover:text-brand-green"
-          >
-            Iniciar sesión
-          </a>
+          <FormTrigger kind="owner" className="text-sm font-semibold text-brand-blue transition-colors hover:text-brand-green">
+            Publicar mi espacio
+          </FormTrigger>
           <FormTrigger kind="client" className="inline-flex h-11 items-center justify-center rounded-full bg-brand-green px-5 text-sm font-semibold text-white transition hover:bg-brand-green-600">
             Encontrar espacio
           </FormTrigger>
