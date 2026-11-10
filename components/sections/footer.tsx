@@ -1,4 +1,5 @@
 import { FlexilogsLogo } from '@/components/brand/flexilogs-logo'
+import { FormTrigger } from '@/components/sections/pilot-forms'
 
 const NAV = [
   {
@@ -51,12 +52,15 @@ export function Footer() {
               <ul className="mt-4 space-y-2.5">
                 {col.links.map((link) => (
                   <li key={link.label}>
-                    <a
-                      href={link.href}
-                      className="text-sm text-white/70 transition-colors hover:text-white"
-                    >
-                      {link.label}
-                    </a>
+                    {link.label === 'Publicar mi espacio' ? (
+                      <FormTrigger kind="owner" className="text-left text-sm text-white/70 transition-colors hover:text-white">
+                        {link.label}
+                      </FormTrigger>
+                    ) : (
+                      <a href={link.href} className="text-sm text-white/70 transition-colors hover:text-white">
+                        {link.label}
+                      </a>
+                    )}
                   </li>
                 ))}
               </ul>
