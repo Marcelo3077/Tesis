@@ -1,6 +1,6 @@
 import { ArrowRight } from 'lucide-react'
 import { FlexilogsMark } from '@/components/brand/flexilogs-logo'
-import { CTALink } from '@/components/ui/cta'
+import { FormTrigger } from '@/components/sections/pilot-forms'
 import { Reveal } from '@/components/ui/reveal'
 
 export function FinalCta() {
@@ -29,13 +29,13 @@ export function FinalCta() {
                 del espacio, un futuro con más posibilidades.
               </p>
               <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
-                <CTALink href="#solicitar" variant="white">
+                <FormTrigger kind="client" className="group inline-flex h-13 items-center justify-center gap-2 rounded-full bg-white px-7 text-base font-semibold text-brand-blue shadow-lg hover:bg-brand-green-light">
                   Solicitar espacio
-                  <ArrowRight className="transition-transform group-hover:translate-x-1" />
-                </CTALink>
-                <CTALink href="#publica" variant="outline-white">
+                  <ArrowRight className="size-[1.15em] transition-transform group-hover:translate-x-1" />
+                </FormTrigger>
+                <FormTrigger kind="owner" className="inline-flex h-13 items-center justify-center gap-2 rounded-full border-2 border-white/40 px-7 text-base font-semibold text-white hover:bg-white hover:text-brand-blue">
                   Publicar mi espacio
-                </CTALink>
+                </FormTrigger>
               </div>
             </div>
           </div>

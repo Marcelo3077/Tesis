@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { Check, ArrowRight } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
-import { CTALink } from '@/components/ui/cta'
+import { FormTrigger } from '@/components/sections/pilot-forms'
 import { Reveal } from '@/components/ui/reveal'
 
 const BENEFITS = [
@@ -65,10 +65,10 @@ export function Business() {
 
           <Reveal delay={520}>
             <div className="mt-9">
-              <CTALink href="#buscador" variant="green">
+              <FormTrigger kind="client" className="group inline-flex h-13 items-center justify-center gap-2 rounded-full bg-brand-green px-7 text-base font-semibold text-white shadow-lg shadow-brand-green/25 transition hover:bg-brand-green-600">
                 Encontrar espacio para mi negocio
-                <ArrowRight className="transition-transform group-hover:translate-x-1" />
-              </CTALink>
+                <ArrowRight className="size-[1.15em] transition-transform group-hover:translate-x-1" />
+              </FormTrigger>
             </div>
           </Reveal>
         </div>
