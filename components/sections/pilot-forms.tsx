@@ -16,8 +16,8 @@ export function openPilotForm(kind: PilotFormKind) {
   window.setTimeout(() => target?.querySelector<HTMLElement>('input, select, textarea')?.focus({ preventScroll: true }), 450)
 }
 
-export function FormTrigger({ kind, children, className }: { kind: PilotFormKind; children: React.ReactNode; className?: string }) {
-  return <button type="button" onClick={() => openPilotForm(kind)} className={className}>{children}</button>
+export function FormTrigger({ kind, children, className, onClick }: { kind: PilotFormKind; children: React.ReactNode; className?: string; onClick?: () => void }) {
+  return <button type="button" onClick={() => { openPilotForm(kind); onClick?.() }} className={className}>{children}</button>
 }
 
 const input = 'h-12 w-full rounded-xl border border-brand-gray bg-white px-3 text-sm text-brand-blue outline-none transition focus:border-brand-green focus:ring-4 focus:ring-brand-green/15'

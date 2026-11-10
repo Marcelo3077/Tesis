@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { ArrowRight, ShieldCheck, MapPin, CalendarClock } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { CTALink } from '@/components/ui/cta'
+import { FormTrigger } from '@/components/sections/pilot-forms'
 import { Reveal } from '@/components/ui/reveal'
 
 const HERO_POINTS = [
@@ -57,9 +58,9 @@ export function Hero() {
                 Empieza ahora
                 <ArrowRight className="transition-transform group-hover:translate-x-1" />
               </CTALink>
-              <CTALink href="#publica" variant="outline-blue">
+              <FormTrigger kind="owner" className="inline-flex h-13 items-center justify-center gap-2 rounded-full border-2 border-brand-blue/20 px-7 text-base font-semibold text-brand-blue transition hover:border-brand-blue">
                 Publicar mi espacio
-              </CTALink>
+              </FormTrigger>
             </div>
           </Reveal>
 

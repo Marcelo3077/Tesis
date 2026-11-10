@@ -3,14 +3,14 @@
 import { useEffect, useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import { FlexilogsLogo } from '@/components/brand/flexilogs-logo'
-import { CTALink } from '@/components/ui/cta'
+import { FormTrigger } from '@/components/sections/pilot-forms'
 import { cn } from '@/lib/utils'
 
 const NAV_LINKS = [
   { label: 'Inicio', href: '#inicio' },
   { label: 'Cómo funciona', href: '#como-funciona' },
   { label: 'Espacios', href: '#espacios' },
-  { label: 'Publica tu espacio', href: '#publica' },
+  { label: 'Publicar mi espacio', href: '#solicitar' },
   { label: 'Preguntas', href: '#faq' },
 ]
 
@@ -53,12 +53,15 @@ export function Navbar() {
         <ul className="hidden items-center gap-7 lg:flex">
           {NAV_LINKS.map((link) => (
             <li key={link.href}>
-              <a
-                href={link.href}
-                className="text-sm font-medium text-brand-blue/80 transition-colors hover:text-brand-green"
-              >
-                {link.label}
-              </a>
+              {link.label === 'Publicar mi espacio' ? (
+                <FormTrigger kind="owner" className="text-sm font-medium text-brand-blue/80 transition-colors hover:text-brand-green">
+                  {link.label}
+                </FormTrigger>
+              ) : (
+                <a href={link.href} className="text-sm font-medium text-brand-blue/80 transition-colors hover:text-brand-green">
+                  {link.label}
+                </a>
+              )}
             </li>
           ))}
         </ul>
@@ -70,9 +73,9 @@ export function Navbar() {
           >
             Iniciar sesión
           </a>
-          <CTALink href="#buscador" size="md" variant="green">
+          <FormTrigger kind="client" className="inline-flex h-11 items-center justify-center rounded-full bg-brand-green px-5 text-sm font-semibold text-white transition hover:bg-brand-green-600">
             Encontrar espacio
-          </CTALink>
+          </FormTrigger>
         </div>
 
         <button
@@ -102,17 +105,12 @@ export function Navbar() {
               </li>
             ))}
             <li className="grid gap-2 pt-3">
-              <CTALink href="#buscador" size="md" variant="green" onClick={() => setOpen(false)}>
+              <FormTrigger kind="client" onClick={() => setOpen(false)} className="inline-flex h-11 items-center justify-center rounded-full bg-brand-green px-5 text-sm font-semibold text-white transition hover:bg-brand-green-600">
                 Encontrar espacio
-              </CTALink>
-              <CTALink
-                href="#publica"
-                size="md"
-                variant="outline-blue"
-                onClick={() => setOpen(false)}
-              >
+              </FormTrigger>
+              <FormTrigger kind="owner" onClick={() => setOpen(false)} className="inline-flex h-11 items-center justify-center rounded-full border-2 border-brand-blue/20 px-5 text-sm font-semibold text-brand-blue transition hover:border-brand-blue">
                 Publicar mi espacio
-              </CTALink>
+              </FormTrigger>
             </li>
           </ul>
         </div>
