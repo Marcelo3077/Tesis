@@ -6,7 +6,9 @@ import { HowItWorks } from '@/components/sections/how-it-works'
 import { FeaturedSpaces } from '@/components/sections/featured-spaces'
 import { Business } from '@/components/sections/business'
 import { Stats } from '@/components/sections/stats'
-import { HostSpace } from '@/components/sections/host-space'
+import { Pricing } from '@/components/sections/pricing'
+import { Safety } from '@/components/sections/safety'
+import { PilotForms } from '@/components/sections/pilot-forms'
 import { Testimonials } from '@/components/sections/testimonials'
 import { Faq } from '@/components/sections/faq'
 import { FinalCta } from '@/components/sections/final-cta'
@@ -24,7 +26,9 @@ export default function HomePage() {
         <FeaturedSpaces />
         <Business />
         <Stats />
-        <HostSpace />
+        <Pricing />
+        <Safety />
+        <PilotForms />
         <Testimonials />
         <Faq />
         <FinalCta />

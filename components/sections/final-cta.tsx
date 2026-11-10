@@ -29,8 +29,8 @@ export function FinalCta() {
                 del espacio, un futuro con más posibilidades.
               </p>
               <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
-                <CTALink href="#buscador" variant="white">
-                  Empieza ahora
+                <CTALink href="#solicitar" variant="white">
+                  Solicitar espacio
                   <ArrowRight className="transition-transform group-hover:translate-x-1" />
                 </CTALink>
                 <CTALink href="#publica" variant="outline-white">

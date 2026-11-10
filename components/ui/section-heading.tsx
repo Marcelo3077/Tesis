@@ -9,6 +9,7 @@ interface SectionHeadingProps {
   description?: ReactNode
   align?: 'left' | 'center'
   className?: string
+  light?: boolean
 }
 
 export function SectionHeading({
@@ -17,6 +18,7 @@ export function SectionHeading({
   description,
   align = 'center',
   className,
+  light = false,
 }: SectionHeadingProps) {
   return (
     <div
@@ -34,13 +36,13 @@ export function SectionHeading({
         </Reveal>
       )}
       <Reveal delay={80}>
-        <h2 className="mt-4 text-balance text-3xl font-extrabold leading-tight tracking-tight text-brand-blue sm:text-4xl">
+        <h2 className={cn('mt-4 text-balance text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl', light ? 'text-white' : 'text-brand-blue')}>
           {title}
         </h2>
       </Reveal>
       {description && (
         <Reveal delay={140}>
-          <p className="mt-4 text-pretty text-lg leading-relaxed text-brand-muted">
+          <p className={cn('mt-4 text-pretty text-lg leading-relaxed', light ? 'text-white/75' : 'text-brand-muted')}>
             {description}
           </p>
         </Reveal>
